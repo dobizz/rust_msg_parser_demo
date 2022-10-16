@@ -1,0 +1,26 @@
+[package]
+name = "msg_parser"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bytes = "1.2.1"
+futures = { version = "0.3", default-features = false }
+msg_parser = "0.1.1"
+serde_json = "1.0"
+tokio = { version = "1.2", features = ["full"] }
+warp = "0.3.3"
+
+#[target.x86_64-unknown-linux-musl]
+#linker = "rust-lld"
+
+[profile.dev]
+debug = 0
+
+[profile.test]
+debug = 0
+
+[profile.release]
+panic = "abort"
